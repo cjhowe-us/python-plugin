@@ -1,0 +1,11 @@
+- id: new-file-tests
+  name: warn on new .py files without a matching test
+  description: >
+    Non-blocking warning printed when a newly-added Python module in the
+    commit has no `test_<stem>.py` or `<stem>_test.py` anywhere in the
+    repository. Disable with `PYTHON_PLUGIN_REQUIRE_TESTS=0`.
+  entry: python hooks/pre-commit-new-file-tests.py
+  language: python
+  types: [python]
+  stages: [pre-commit]
+  always_run: false

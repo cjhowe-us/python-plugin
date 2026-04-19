@@ -31,7 +31,8 @@ def main() -> int:
             continue
         seen_roots.add(root)
         code, out = run(["uv", "lock"], cwd=root, timeout=30)
-        emit("uv lock", target, code, out)
+        # Per docstring: only surface stderr when the lock command fails.
+        emit("uv lock", target, code, out if code else "")
     return 0
 
 
