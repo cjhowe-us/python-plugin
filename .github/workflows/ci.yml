@@ -30,8 +30,9 @@ jobs:
           python-version: '3.12'
           enable-cache: true
           cache-dependency-glob: pyproject.toml
-      - run: uv pip install --system -e ".[dev]"
-      - run: python -m mypy
+      - run: uv venv
+      - run: uv pip install -e ".[dev]"
+      - run: uv run python -m mypy
 
   hooks-smoke:
     name: hook smoke tests
