@@ -4,8 +4,11 @@
     Non-blocking warning printed when a newly-added Python module in the
     commit has no `test_<stem>.py` or `<stem>_test.py` anywhere in the
     repository. Disable with `PYTHON_PLUGIN_REQUIRE_TESTS=0`.
-  entry: python hooks/pre-commit-new-file-tests.py
-  language: python
+  # `language: script` executes `entry` directly from this plugin's own
+  # checkout (pre-commit resolves it relative to the hook repo root, not
+  # the consumer repo). Python 3.11+ is expected on PATH.
+  entry: hooks/pre-commit-new-file-tests.py
+  language: script
   types: [python]
   stages: [pre-commit]
   always_run: false
