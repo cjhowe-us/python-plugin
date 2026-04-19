@@ -1,0 +1,22 @@
+{
+  "name": "python-plugin",
+  "version": "0.1.0",
+  "repository": "https://github.com/cjhowe-us/python-plugin",
+  "author": {
+    "name": "Christian Howe",
+    "url": "https://github.com/cjhowe-us"
+  },
+  "description": "Python toolchain plugin: ruff + mypy PostToolUse hooks, pytest-related runner, missing-test detector, uv lockfile sync, and a unified Python skill alongside per-tool skills (ruff, mypy, uv, pypi, pytest) for fine-grained enablement.",
+  "keywords": [
+    "python",
+    "ruff",
+    "mypy",
+    "uv",
+    "pytest",
+    "pypi",
+    "linter",
+    "formatter",
+    "type-checker"
+  ],
+  "license": "Apache-2.0"
+}
