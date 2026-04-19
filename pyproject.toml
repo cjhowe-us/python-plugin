@@ -71,13 +71,13 @@ ignore = ["ANN401"]
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = ["ANN", "E402"]
 
-[tool.mypy]
-python_version = "3.11"
-strict = true
-files = ["hooks"]
-mypy_path = "hooks"
-explicit_package_bases = true
-namespace_packages = true
+[tool.ty.src]
+include = ["hooks"]
+exclude = ["**/tests/**", "**/.venv/**"]
+
+[tool.ty.environment]
+python-version = "3.11"
+extra-paths = ["hooks"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

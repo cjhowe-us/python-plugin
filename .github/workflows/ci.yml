@@ -20,8 +20,8 @@ jobs:
       - run: uvx ruff check .
       - run: uvx ruff format --check .
 
-  mypy:
-    name: mypy --strict
+  ty:
+    name: ty
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,8 +30,7 @@ jobs:
           python-version: '3.12'
           enable-cache: true
           cache-dependency-glob: pyproject.toml
-      - run: uv pip install -e ".[dev]"
-      - run: uv run python -m mypy
+      - run: uvx ty check
 
   pytest:
     name: pytest + coverage
