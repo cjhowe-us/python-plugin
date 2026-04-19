@@ -1,6 +1,6 @@
 [project]
 name = "claude-python-plugin"
-version = "0.2.0"
+version = "0.3.0"
 description = "Claude Code plugin: ruff + mypy + pytest + uv hooks and Python skills."
 readme = "README.md"
 requires-python = ">=3.11"
