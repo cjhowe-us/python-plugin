@@ -30,7 +30,6 @@ jobs:
           python-version: '3.12'
           enable-cache: true
           cache-dependency-glob: pyproject.toml
-      - run: uv venv
       - run: uv pip install -e ".[dev]"
       - run: uv run python -m mypy
 
