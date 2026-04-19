@@ -54,9 +54,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Each hook is syntactically importable + a no-op on empty stdin
+      - name: PostToolUse hooks run + are a no-op on empty stdin
         run: |
           for h in hooks/posttooluse-*.py; do
             echo "=> $h"
             : | python3 "$h"
+          done
+      - name: pre-commit hooks execute without crashing
+        run: |
+          for h in hooks/pre-commit-*.py; do
+            echo "=> $h"
+            python3 "$h"
           done

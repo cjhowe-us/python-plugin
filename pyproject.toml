@@ -42,6 +42,7 @@ packages = []
 
 [tool.setuptools.data-files]
 "share/claude-plugins/python-plugin/.claude-plugin" = [".claude-plugin/plugin.json"]
+"share/claude-plugins/python-plugin" = [".pre-commit-hooks.yaml"]
 "share/claude-plugins/python-plugin/hooks" = [
   "hooks/hooks.json",
   "hooks/_common.py",
@@ -50,6 +51,7 @@ packages = []
   "hooks/posttooluse-pytest.py",
   "hooks/posttooluse-test-required.py",
   "hooks/posttooluse-uv-lock.py",
+  "hooks/pre-commit-new-file-tests.py",
 ]
 "share/claude-plugins/python-plugin/skills/python" = ["skills/python/SKILL.md"]
 "share/claude-plugins/python-plugin/skills/python-ruff" = ["skills/python-ruff/SKILL.md"]
